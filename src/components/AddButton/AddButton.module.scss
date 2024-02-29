@@ -1,0 +1,42 @@
+@use "../../styles/partials/variables";
+@use "../../styles/partials/mixins";
+
+.button {
+  width: calc(25% - 30px);
+  height: 135px;
+  padding: 10px;
+  background-color: variables.$background-color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid variables.$accent-color;
+  }
+
+  &__addItem {
+    @include mixins.font(16px, 600);
+    display: block;
+    position: relative;
+    padding-top: 20px;
+    text-align: center;
+    color: variables.$black-color;
+
+    &::before {
+      content: "";
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      left: calc(50% - 9.5px);
+      top: 2px;
+      background: url(../../assets/icon-add.svg) no-repeat center;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .button {
+    width: 235px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}

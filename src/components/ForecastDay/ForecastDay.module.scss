@@ -1,0 +1,40 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 14.28%;
+  padding: 10px;
+
+  &__title {
+    @include mixins.font(14px, 600);
+    color: variables.$light-color;
+    margin-bottom: 15px;
+  }
+
+  &__image {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  &__temperature {
+    @include mixins.font(14px, 500);
+    color: variables.$medium-color;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .day {
+    &__title {
+      @include mixins.font(13px, 600);
+    }
+
+    &__temperature {
+      @include mixins.font(13px, 500);
+    }
+  }
+}

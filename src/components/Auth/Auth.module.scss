@@ -1,0 +1,81 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.auth {
+  &__loginButton {
+    @include mixins.font(16px, 600);
+    color: variables.$white-color;
+    background-color: variables.$dark-accent-color;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:hover {
+      filter: grayscale(30%);
+    }
+  }
+
+  &__waiting {
+    @include mixins.font(18px, 600);
+    color: variables.$dark-color;
+    padding: 12px 0;
+  }
+
+  &__user {
+    @include mixins.font(16px, 600);
+    position: relative;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    color: variables.$white-color;
+    background-color: variables.$dark-accent-color;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:hover .auth__userSections {
+      display: block;
+    }
+  }
+
+  &__userSections {
+    position: absolute;
+    display: none;
+    width: 250px;
+    top: 36px;
+    left: 0;
+    background: variables.$background-color;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 60;
+  }
+
+  &__profileLink {
+    @include mixins.font(14px, 600);
+    display: block;
+    font-family: 'Noto Sans', sans-serif;
+    color: variables.$black-color;
+    text-decoration: none;
+    padding: 10px 20px;
+
+    &:hover {
+      background-color: variables.$accent-color;
+    }
+  }
+
+  &__logoutButton {
+    @include mixins.font(14px, 600);
+    width: 100%;
+    color: variables.$black-color;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: variables.$accent-color;
+    }
+  }
+}

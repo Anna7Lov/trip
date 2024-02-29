@@ -1,0 +1,10 @@
+@use "../../styles/partials/variables";
+@use "../../styles/partials/mixins";
+
+.error {
+  @include mixins.font(16px, 500);
+  max-width: 650px;
+  color: variables.$bright-color;
+  text-align: center;
+  padding: 15px;
+}

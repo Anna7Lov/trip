@@ -1,0 +1,23 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.forecast {
+  width: 75%;
+
+  &__title {
+    @include mixins.font(18px, 600);
+    color: variables.$dark-color;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .forecast {
+    width: 100%;
+  }
+}

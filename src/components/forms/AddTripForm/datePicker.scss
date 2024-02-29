@@ -1,0 +1,43 @@
+@use "../../../styles/partials/variables";
+@use "../../../styles/partials/mixins";
+
+.react-datepicker-wrapper {
+  display: block;
+}
+
+.react-datepicker {
+  border: none;
+  box-shadow: 5px 12px 30px rgba(199, 199, 199, 0.5);
+}
+
+.react-datepicker__header {
+  background: variables.$medium-color;
+  border-bottom: none;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: variables.$white-color;
+  font-weight: 500;
+}
+
+.react-datepicker__day {
+  font-weight: 500;
+}
+
+.react-datepicker__day--selected {
+  background: variables.$medium-color;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: variables.$white-color;
+  border-width: 2px 2px 0 0;
+}
+
+.react-datepicker__navigation--next:hover {
+  border-color: variables.$black-color;
+}

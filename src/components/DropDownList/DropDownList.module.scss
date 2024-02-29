@@ -1,0 +1,63 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.dropDownList {
+  position: relative;
+  margin-bottom: 20px;
+
+  &__label {
+    display: block;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '*';
+      color: variables.$bright-color;
+      margin-right: 3px;
+    }
+  }
+
+  &__select {
+    border: 2px solid variables.$extra-light-color;
+    padding: 10px;
+    color: variables.$light-color;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      right: 12px;
+      top: 36px;
+      background: url(../../assets/arrow-down.svg) no-repeat center;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    width: 100%;
+    background-color: variables.$white-color;
+    border-left: 2px solid variables.$extra-light-color;
+    border-right: 2px solid variables.$extra-light-color;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-bottom: 2px solid variables.$extra-light-color;
+
+    &:hover {
+      background-color: variables.$accent-color;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 60px;
+    margin-right: 10px;
+  }
+}
