@@ -1,0 +1,52 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$modal-background-color;
+  z-index: 100;
+
+  &__window {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+    max-height: 100vh;
+    padding: 25px 0;
+    background: variables.$white-color;
+    box-shadow: 0px 4px 20px 0px variables.$dark-color;
+    overflow-y: auto;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__header {
+    margin-bottom: 15px;
+  }
+
+  &__cross {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__title {
+    @include mixins.font(20px, 700);
+    color: variables.$black-color;
+    padding-left: 25px;
+  }
+}

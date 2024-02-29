@@ -1,0 +1,71 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.main {
+  display: flex;
+
+  &__leftContent {
+    width: 65%;
+    max-width: 1200px;
+    padding: 15px 30px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    @include mixins.font(22px, 400);
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__trips {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main {
+    &__leftContent {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .main {
+    &__leftContent {
+      width: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .main {
+    flex-direction: column;
+
+    &__leftContent {
+      width: 100%;
+      order: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    &__leftContent {
+      padding: 15px;
+    }
+
+    &__trips {
+      flex-direction: column-reverse;
+    }
+  }
+}

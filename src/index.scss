@@ -1,0 +1,14 @@
+@import "./styles/reset.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+}

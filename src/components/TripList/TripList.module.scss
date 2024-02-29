@@ -1,0 +1,58 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.tripList {
+  width: 80%;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 240px;
+    overflow-y: auto;
+    margin-right: 30px;
+    margin-bottom: 15px;
+  }
+
+  &__pagination {
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: none;
+    color: variables.$white-color;
+    background-color: variables.$dark-accent-color;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      filter: grayscale(30%);
+    }
+
+    &[disabled] {
+      background-color: variables.$light-color;
+      cursor: auto;
+    }
+  }
+
+  &__emptyList {
+    @include mixins.font(18px, 600);
+    color: variables.$dark-color;
+    padding: 30px 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .tripList {
+    width: 100%;
+
+    &__content {
+      margin-right: 0;
+    }
+  }
+}

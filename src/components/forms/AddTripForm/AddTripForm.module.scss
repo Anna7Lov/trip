@@ -1,0 +1,90 @@
+@use '../../../styles/partials/variables';
+@use '../../../styles/partials/mixins';
+
+.form {
+  &__content {
+    padding: 70px 25px;
+    border-top: 2px solid variables.$extra-light-color;
+    border-bottom: 2px solid variables.$extra-light-color;
+    margin-bottom: 20px;
+  }
+
+  &__error {
+    color: variables.$bright-color;
+    margin-top: -15px;
+    margin-bottom: 15px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '*';
+      color: variables.$bright-color;
+      margin-right: 3px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 12px;
+      top: 36px;
+      width: 19px;
+      height: 19px;
+      background: url(../../../assets/calendar.svg) no-repeat center;
+      z-index: 20;
+      cursor: pointer;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: 2px solid variables.$extra-light-color;
+    padding: 10px;
+    color: variables.$light-color;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &::placeholder {
+      color: variables.$light-color;
+      font-size: 16px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 25px;
+  }
+
+  &__button {
+    @include mixins.font(14px, 700);
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  &__resetButton {
+    background-color: variables.$white-color;
+    border: 2px solid variables.$extra-light-color;
+    color: variables.$dark-color;
+    margin-right: 15px;
+  }
+
+  &__submitButton {
+    color: variables.$white-color;
+    background-color: variables.$accent-color;
+    border: none;
+  }
+}
